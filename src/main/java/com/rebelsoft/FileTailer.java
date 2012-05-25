@@ -116,8 +116,8 @@ public class FileTailer {
                     // There is data to read
                     file.seek(filePointer);
                     String line = file.readLine();
-                    filePointer = file.getFilePointer();
                     while (line != null) {
+                        filePointer = file.getFilePointer();
                         this.fireNewLogFileLine(line, filePointer);
                         line = file.readLine();
                     }
